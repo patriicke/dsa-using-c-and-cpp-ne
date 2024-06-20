@@ -46,9 +46,19 @@ void registerDoctor()
     cout << "NAME: ";
     cin.ignore();
     getline(cin, name);
+    if (isEmpty(name))
+    {
+        cout << "NAME can't be empty" << endl;
+        return;
+    }
 
     cout << "SPECIALIZATION: ";
     getline(cin, specialization);
+    if (isEmpty(specialization))
+    {
+        cout << "SPECIALIZATION can't be empty" << endl;
+        return;
+    }
 
     // Create new doctor node
     Doctor *newDoctor = new Doctor;

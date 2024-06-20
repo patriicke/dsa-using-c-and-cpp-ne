@@ -45,6 +45,11 @@ void registerAppointment()
     cout << "DATE: ";
     cin.ignore();
     getline(cin, appointment_date);
+    if (isEmpty(appointment_date))
+    {
+        cout << "DATE can't be empty" << endl;
+        return;
+    }
 
     // Create new appointment node
     Appointment *newAppointment = new Appointment;
