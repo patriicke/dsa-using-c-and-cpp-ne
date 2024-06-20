@@ -1,4 +1,5 @@
 #include "iostream"
+#include "./utils.h"
 
 using namespace std;
 
@@ -45,12 +46,32 @@ void registerPatient()
     cout << "NAME: ";
     cin.ignore();
     getline(cin, name);
+    if (isEmpty(name))
+    {
+        cout << "NAME can't be empty" << endl;
+        return;
+    }
 
     cout << "DoB: ";
     getline(cin, dob);
+    if (isEmpty(dob))
+    {
+        cout << "DoB can't be empty" << endl;
+        return;
+    }
 
     cout << "GENDER: ";
     getline(cin, gender);
+    if (isEmpty(gender))
+    {
+        cout << "GENDER can't be empty" << endl;
+        return;
+    }
+    if (isEmpty(checkGender(gender)))
+    {
+        cout << "Invalid GENDER!" << endl;
+        return;
+    }
 
     // Create new patient node
     Patient *newPatient = new Patient;
