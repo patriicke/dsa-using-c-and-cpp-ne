@@ -3,6 +3,8 @@
     "*.css": "css",
     "css": "css",
     "new": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "string": "cpp",
+    "iostream": "cpp"
   }
 }

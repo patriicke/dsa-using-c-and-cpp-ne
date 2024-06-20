@@ -52,11 +52,17 @@ void registerPatient()
         return;
     }
 
-    cout << "DoB: ";
+    cout << "DoB in format DD/MM/YYYY: ";
     getline(cin, dob);
     if (isEmpty(dob))
     {
         cout << "DoB can't be empty" << endl;
+        return;
+    }
+    string invalidDateError = isInvalidDate(dob, 1900, 2024);
+    if (!isEmpty(invalidDateError))
+    {
+        cout << invalidDateError << endl;
         return;
     }
 
@@ -67,7 +73,8 @@ void registerPatient()
         cout << "GENDER can't be empty" << endl;
         return;
     }
-    if (isEmpty(checkGender(gender)))
+    gender = checkGender(gender);
+    if (isEmpty(gender))
     {
         cout << "Invalid GENDER!" << endl;
         return;

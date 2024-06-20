@@ -50,6 +50,12 @@ void registerAppointment()
         cout << "DATE can't be empty" << endl;
         return;
     }
+    string invalidDateError = isInvalidDate(appointment_date, 2024, 2050);
+    if (!isEmpty(invalidDateError))
+    {
+        cout << invalidDateError << endl;
+        return;
+    }
 
     // Create new appointment node
     Appointment *newAppointment = new Appointment;
